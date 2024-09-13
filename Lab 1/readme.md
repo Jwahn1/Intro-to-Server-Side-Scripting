@@ -14,7 +14,7 @@ Email: jv513910@dal.ca
 ### Code Information
 
 Date Created: 9/13/2024
-Last Modification Date: DD MMM YYYY
+Last Modification Date: 9/13/2024
 
 ## Description
 
@@ -22,7 +22,8 @@ One Paragraph of assignment description goes here.
 
 What work did you do, and what steps did you take to work on it?
 
-we were tasked with creating a simple html based webpage and then seperating the header, body and footer into three seperate files, so when we open the 
+we were tasked with creating a simple html based webpage and then seperating the header, body and footer into three seperate files.
+(index.php,header.php,footer.php)
 
 ## Citations/Attributions
 
