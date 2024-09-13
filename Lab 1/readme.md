@@ -8,12 +8,12 @@ Introduction to Server-Side Scripting, Fall Semester 2024
 
 ### Author
 
-Full Name: <Your Name Here>
-Email: email@dal.ca
+Full Name: <Javier Wahn>
+Email: jv513910@dal.ca
 
 ### Code Information
 
-Date Created: DD MMM YYYY
+Date Created: 9/13/2024
 Last Modification Date: DD MMM YYYY
 
 ## Description
@@ -21,6 +21,8 @@ Last Modification Date: DD MMM YYYY
 One Paragraph of assignment description goes here.
 
 What work did you do, and what steps did you take to work on it?
+
+we were tasked with creating a simple html based webpage and then seperating the header, body and footer into three seperate files, so when we open the 
 
 ## Citations/Attributions
 
