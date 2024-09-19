@@ -19,11 +19,11 @@
     ?>
     <div class="container mt-4 " style="background-color:#fff; height:900px;">
        <div class="row" style="height:50px; background-color:#78777b">
-        <div class="col-1">logo</div>
-        <div class="col-8"></div>
-        <div class="col-1">nav1</div>
-        <div class="col-1">nav2</div>
-        <div class="col-1">email me</div>
+        <div class="col-1" style="font-size:20px;">logo</div>
+        <div class="col-8" ></div>
+        <div class="col-1 "style="font-size:20px;">nav1</div>
+        <div class="col-1"style="font-size:20px;">nav2</div>
+        <div class="col-1"style="font-size:20px;"><a href="mailto:jv513910@dal.ca?subject=mail from A1">Email</a></div>
        </div>
        <div class="row" style="height:200px; background-color:#dedede; border-style:solid;">
           <p>banner for picture </p>
@@ -63,8 +63,8 @@
             </div>
             <div class="row">
               <div class="col-6 ml-4 mt-2" style="overflow-wrap: break-word; border-style:none;background-color:#c7dbf7"> 
-                <p>The text from the File read task 1 on
-                Brightspace must be displayed here.</p>
+                <h5>The text from the File read task 1 on
+                Brightspace must be displayed here.</h5>
               </div>
               <div class="col-5 ml-2 mt-2" style="overflow-wrap: break-word; border-style:none;background-color:#c7dbf7"> 
                 <p>img here</p>
@@ -77,8 +77,8 @@
             </div>
             <div class="row">
               <div class="col-6 ml-4 mt-2" style="overflow-wrap: break-word; border-style:none;background-color:#c7dbf7"> 
-                <p>The text from the File read task 2 on
-                Brightspace must be displayed here.</p>
+                <h5>The text from the File read task 2 on
+                Brightspace must be displayed here.</h5>
               </div>
               <div class="col-5 ml-2 mt-2" style="overflow-wrap: break-word; border-style:none;background-color:#c7dbf7"> 
                 <p>img here</p>
