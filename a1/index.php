@@ -12,23 +12,9 @@
     <title>Hello, world!</title>
   </head>
   <body>
-
-    <?php
-       
-
-    ?>
     <div class="container mt-4 " style="background-color:#fff; height:900px;">
-       <div class="row" style="height:50px; background-color:#78777b">
-        <div class="col-1" style="font-size:20px;">logo</div>
-        <div class="col-8" ></div>
-        <div class="col-1 "style="font-size:20px;">nav1</div>
-        <div class="col-1"style="font-size:20px;">nav2</div>
-        <div class="col-1"style="font-size:20px;"><a href="mailto:jv513910@dal.ca?subject=mail from A1">Email</a></div>
-       </div>
-       <div class="row" style="height:200px; background-color:#dedede; border-style:solid;">
-          <p>banner for picture </p>
-       </div>
-       <div class="row" style="height:75%; background-color:#bab8b9; border-style:solid;">
+      <?php include 'includes/header.php'; ?>
+       <div class="row" style="height:80%; background-color:#bab8b9; border-style:solid;">
           <div class="container" style="width:70%; background-color:#fff; border-style:solid;">
           <p>inner white text paragraph</p>
               <div class="row" style="height:150px;  border-style:none;">
@@ -88,11 +74,5 @@
        </div>
     </div>
   </body>
-  <footer>
-    <div class="row" style="height:80px; background-color:#000;overflow-wrap: break-word;">
-      <p style="color:#fff;">
-      Page Footer (with black background, copyright information, and other links as per web best practices)
-      </p>
-    </div>
-  </footer>
+  <?php include 'includes/footer.php'; ?>
 </html>
