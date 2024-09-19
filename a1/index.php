@@ -12,12 +12,11 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container mt-4 " style="background-color:#fff; height:900px;">
+    <div class="container mt-4 " style="background-color:#fff; height:1500px;">
       <?php include 'includes/header.php'; ?>
        <div class="row" style="height:80%; background-color:#bab8b9; border-style:solid;">
           <div class="container" style="width:70%; background-color:#fff; border-style:solid;">
-          <p>inner white text paragraph</p>
-              <div class="row" style="height:150px;  border-style:none;">
+              <div class="row mt-3" style="height:150px;  border-style:none;">
                 <div class="col-8" style="background-color:#fff; border-style:none;overflow-wrap: break-word; ">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -43,31 +42,25 @@
               </p>
             </div>
             <div class="row ml-4" style="background-color:#000202; width:90%;">
-               <h4 style="color :#fff">
-                  File read task 1 (give appropriate heading)
-               </h4>
+               <h4 style="color :#fff">Academic Integrity</h4>
             </div>
             <div class="row">
               <div class="col-6 ml-4 mt-2" style="overflow-wrap: break-word; border-style:none;background-color:#c7dbf7"> 
-                <h5>The text from the File read task 1 on
-                Brightspace must be displayed here.</h5>
+                <h5><?php include 'files/integrity.txt'?></h5>
               </div>
               <div class="col-5 ml-2 mt-2" style="overflow-wrap: break-word; border-style:none;background-color:#c7dbf7"> 
-                <p>img here</p>
+                <img src="img/academic_integrity_medium.jpg" alt="academic integrity" style="height:300px; width:120 px;"> 
               </div>
             </div>
             <div class="row ml-4 mt-4" style="background-color:#000202; width:90%;">
-               <h4 style="color :#fff">
-                  File read task 2 (give appropriate heading)
-               </h4>
+               <h4 style="color :#fff"> Pledge</h4>
             </div>
             <div class="row">
               <div class="col-6 ml-4 mt-2" style="overflow-wrap: break-word; border-style:none;background-color:#c7dbf7"> 
-                <h5>The text from the File read task 2 on
-                Brightspace must be displayed here.</h5>
+                <h5> <?php include 'files/pledge.txt';?></h5>
               </div>
               <div class="col-5 ml-2 mt-2" style="overflow-wrap: break-word; border-style:none;background-color:#c7dbf7"> 
-                <p>img here</p>
+              <img src="img/pledge_medium.jpg" alt="pledge" style=" margin ;margin-top:50px;height:200px; width:100 px;"> 
               </div>
             </div>
           </div>
