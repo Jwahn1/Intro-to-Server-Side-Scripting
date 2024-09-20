@@ -11,35 +11,40 @@
         (array_key_exists("user-email",$_POST)) && 
         (array_key_exists("product-name",$_POST)) && 
         (array_key_exists("user-message",$_POST))){
-            $name = $_POST["user-name"];
-            $email = $_POST["user-email"];  
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            //prepare input for the csv file 
+            $line = [$_POST['user-name'],$_POST['user-email'],$_POST['product-name'],$_POST['user-message']];
+            
+            //check if the email is valid
+            if (!filter_var($_POST["user-email"], FILTER_VALIDATE_EMAIL)){
                 echo"this email isnt valid";
             }
-            $productOrService = $_POST["product-name"];
-            $message = $_POST["user-message"];
+    
+
             //make csv here
-            $dataBase = fopen("../files/output.csv","w+");
-            fwrite($dataBase,$name );
-            fwrite($dataBase,",");
-            fwrite($dataBase,$email );
-            fwrite($dataBase,",");
-            fwrite($dataBase,$productOrService );
-            fwrite($dataBase,",");
-            fwrite($dataBase,$message );
+            $dataBase = fopen("../files/output.csv","a");
+            fputcsv($dataBase, $line);
+            fclose($dataBase);
+
+            $dataBase=  fopen("../files/output.csv","r");
+            //print csv values here
+            echo "you're form was submitted succsefully <br>" ;
+           
+            while (($clientInfo = fgetcsv($dataBase,0,",")) !== FALSE)
+            {
+                echo 'Name : ' . $clientInfo[0] . "," . " Email: " . $clientInfo[1] . "," . " Message : " .$clientInfo[3];
+                echo "<br>";
+            }
+
+           
+            
+            fclose($dataBase);
+            
 
         }else{
             echo "<p>Oops, the form wasn't submitted right<p>";
 
         }
-
-        while (($data= fgetcsv($dataBase)) !== FALSE) {
-            echo $data[0];
-            echo $data[1];
-            echo $data[2];
-            echo $data[3];
-        }
-        
+       
  
     ?>
 </body>
