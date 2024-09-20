@@ -29,4 +29,6 @@ What work did you do, and what steps did you take to work on it?
 1. Include citations in this format:
 Author/Website URL, Year published (if available), Content used from the source, and Date accessed. Include a note as to what you used from this source and how you used it (max. 1-2 sentences).
 
-I chose the field "product or service enquiry" as it would make it more clear what type of service the client needs form the get go.
+I chose the field "product or service name" as it would make it more clear what type of help the client needs form the get go.
+
+I chose to validate if the form had submitted by checking if the keys i used as names for the variables were in the POST array, with this method i can check for all of the variables at once and it doesnt matter if one or two are submitted right, the form will still be rejected unless all 4 variables were recieved correctly.
