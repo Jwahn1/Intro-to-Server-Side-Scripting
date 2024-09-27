@@ -26,7 +26,7 @@
                 </div>
                 
                 <div class="col-3" style="background-color:#bab8b9;">
-                <form action="" get="get">
+                <form action="index.php" method="post">
                     <label for="i-keywords">User Login</label>
                     <input type="text" name="username" id="username" required style="width:150px; borderstyle:solid; border-radius: 5px;">
                     <input type="text" name="password" id="password" required style="width:150px; borderstyle:solid; border-radius: 5px;">
