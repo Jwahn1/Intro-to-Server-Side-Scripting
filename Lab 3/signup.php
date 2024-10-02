@@ -8,7 +8,9 @@
 </head>
 <body>
 <form action="includes/signup-processing.php" method="POST">
+    <label for="i-email">Email:</label>
     <input type="email" name="email" required>
+    <label for="i-password">Password:</label>
     <input type="password" name="password" required>
     <button type="submit" id="i-submit" name="signup-submit">Submit</button>
 </form>

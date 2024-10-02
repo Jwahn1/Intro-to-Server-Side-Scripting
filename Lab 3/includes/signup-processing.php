@@ -19,6 +19,7 @@ if($alreadyRegistered){
     //append email and password to database
     fwrite($databse, $signupForm);
     fclose($databse);
+    echo"success";
 }
 
 
