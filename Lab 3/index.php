@@ -29,15 +29,17 @@
             <button type="submit" id="i-submit" name="message-submit">Submit</button>
         </form>
     </aside>
-    <br>
-    <a href='http://localhost/2170/Lab%203/signup.php'>Sign up</a>
-    <br>
-    <a href='http://localhost/2170/Lab%203/login.php'>Log in </a>
-    <br>
+
     <?php 
     //displays if a user has logged on before coming to index 
         if(!isset($_COOKIE["email"])){
             echo "Welcome, " . $_COOKIE['user'];
+        }else{
+            echo "<br>
+            <a href='http://localhost/2170/Lab%203/login.php'>Log in </a>
+            <br>
+            <a href='http://localhost/2170/Lab%203/signup.php'>Sign up</a>
+            ";
         }
     ?>
 </main>
