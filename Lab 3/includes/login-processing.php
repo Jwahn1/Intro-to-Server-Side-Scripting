@@ -21,5 +21,7 @@ if(!$emailcorrect){
     echo "Error 404, Email not found";
 }elseif(!$passwordcorrect){
     echo "The inputted password is wrong";
+}elseif{
+    echo "successful login";
 }
 ?>

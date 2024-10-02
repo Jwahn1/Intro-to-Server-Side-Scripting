@@ -7,7 +7,7 @@
     <title>signup</title>
 </head>
 <body>
-<form action="includes/signup-processing.php" method="POST">
+<form action="includes/login-processing.php" method="POST">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required><br>
 
