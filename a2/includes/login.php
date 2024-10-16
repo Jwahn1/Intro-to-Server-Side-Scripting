@@ -24,7 +24,7 @@ while ($storeUser = fgetcsv($database)) {
 }
 
 if(!$usernameCorrect){    
-    echo "Error 404, Email not found";
+    echo "Error 404, username not found";
 }elseif(!$passwordCorrect){
     echo "The inputted password is wrong";
 }else{
