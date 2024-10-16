@@ -1,5 +1,3 @@
-
-        
     </body>
     <footer style="height:10%;  margin:auto;">
     <div class="row" style="height:80px;  background-color:#2222; ">

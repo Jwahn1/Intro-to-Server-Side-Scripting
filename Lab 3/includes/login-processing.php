@@ -7,7 +7,7 @@ $passwordcorrect = false;
 
 $storeEmail = "";
 
-//first we want to check if this used email is already in the database
+//first we want to check if this used email is already in the database, then check the password
 while ($storeEmail = fgetcsv($database)) {
     if($storeEmail[0] == $email ) {
         $emailcorrect = true;
