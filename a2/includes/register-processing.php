@@ -1,11 +1,5 @@
 <?php
-    /**
-     * CSCI 2170: Intro to Server-Side Scripting (Fall 2024)
-     * Lab 2 Solution
-     * If you wish to use this solution as a starting point for Lab 3,
-     * retain this comment block, and include a citation in readme.md saying
-     * that you are using the solution.
-     */
+     session_start();
 
     $username = sanitize_input($_POST['username']);
     $password = sanitize_input($_POST['password']);
@@ -48,7 +42,7 @@
     
     
 
-
+    //source: Lab 2 solution
     // Function to sanitize input
     function sanitize_input($data)
     {
