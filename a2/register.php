@@ -4,9 +4,9 @@ include "includes/header.php";
 
 <main>
 <div class=" container" style="background-color:#fff; border-style:solid; height: 800px;  ">
-    <div class="col-3" style="background-color:#bab8b9; height:300px; width:380px; text-align:left">
+    <div class="col-3 mt-2" style="background-color:#bab8b9; height:300px; width:380px; text-align:left">
     <h3>REGISTER</h3>
-        <form action="index.php" method="post">
+        <form action="includes/register-processing.php" method="post">
           <label for="i-keywords">Username</label>
           <input type="text" name="username" id="username" required style="margin-left:50px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
           <label for="i-keywords">Password</label>
