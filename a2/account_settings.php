@@ -20,9 +20,11 @@ include "includes/header.php";
         <h3>Change password</h3>
             <form action="includes/password-change.php" method="post">
             <label for="i-keywords">current password</label>
-            <input type="text" name="change" id="change" required style="margin-left:32px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
+            <input type="text" name="password" id="password" required style="margin-left:32px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
             <label for="i-keywords">new password</label>
             <input type="text" name="newPassword" id="newPassword" required style="margin-left:54px;px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
+            <label for="i-keywords">confirm password</label>
+            <input type="text" name="confirmPassword" id="confirmPassword" required style="margin-left:30px;px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
             <input type="submit" value="submit" name="submit" i="i-submit">
             </form>
     </div>';
