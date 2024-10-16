@@ -24,7 +24,13 @@ session_start();
             <div class="col-2 "style="font-size:20px;text-align: center;"> <a href="">Create Entry</a> </div>
             <div class="col-1"style="font-size:20px;text-align: center;"><a href="">Preferences</a></div>
             <div class="col-1"style="font-size:20px;text-align: center;"><a href="">Login</a></div>
-            <div class="col-3"style="font-size:20px;text-align: center;"><a href="">Logout (add username here later)</a></div>
+            <?php
+            if(array_key_exists("loggedin",$_SESSION)){
+                $logout = '<div class="col-3"style="font-size:20px;text-align: center;"><a href="includes/logout.php">Logout ' . $_SESSION["username"] .'</a></div>';
+                echo $logout;
+            }
+            ?>
+            
         </div>
     </head>
     <body style="background-color:#2222; ; width:100%;">

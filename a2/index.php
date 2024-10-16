@@ -6,7 +6,7 @@ include "includes/header.php";
   <div class=" container" style="background-color:#fff; border-style:solid; height: 800px;  ">
   <?php
     //will only display if the loggedin flag hasn't been set
-    if($_SESSION["loggedin"] !== "true"){
+    if(!array_key_exists("loggedin",$_SESSION)){
       echo '
     <div class="col-3 mt-2" style="background-color:#bab8b9; height:160px; width:380px; text-align:left">
       <h3>LOGIN</h3>

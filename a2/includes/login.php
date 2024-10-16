@@ -31,6 +31,7 @@ if(!$usernameCorrect){
     //here we wanna login, are we  starting a session here or what exactly?
     echo "success";
     $_SESSION["loggedin"] = "true";
+    $_SESSION["username"] = $username;
     header('location:http://localhost/2170/a2/index.php');
     exit();
 }
