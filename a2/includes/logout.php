@@ -22,6 +22,11 @@
         $params["secure"], $params["httponly"]
         );
     }
+
+    //set logout cookie, date and time
+    setcookie("logoutTime", date("Y-m-d",time()), time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("logoutHour",  date('h:i'), time() + (86400 * 30), "/"); // 86400 = 1 day
+   
     // Finally, destroy the session.
     session_destroy();
     header('location:http://localhost/2170/a2/index.php');
