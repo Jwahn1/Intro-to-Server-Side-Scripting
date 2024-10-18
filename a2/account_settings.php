@@ -8,7 +8,7 @@ include "includes/header.php";
         echo '
     <div class="col-3 mt-2" style="background-color:#bab8b9; height:160px; width:380px; text-align:left">
         <h3>Change Username</h3>
-            <form action="includes/username-change.php" method="post">
+            <form action="includes/username_change.php" method="post">
             <p>current username is '. $_SESSION['username'] .'</p>
             <label for="i-keywords">New Username</label>
             <input type="text" name="newUsername" id="newUsername" required style="margin-left:45px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
@@ -18,7 +18,7 @@ include "includes/header.php";
     echo '
     <div class="col-3 mt-2" style="background-color:#bab8b9; height:160px; width:380px; text-align:left">
         <h3>Change password</h3>
-            <form action="includes/password-change.php" method="post">
+            <form action="includes/password_change.php" method="post">
             <label for="i-keywords">current password</label>
             <input type="text" name="password" id="password" required style="margin-left:32px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
             <label for="i-keywords">new password</label>

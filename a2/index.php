@@ -17,6 +17,8 @@ include "includes/header.php";
             <input type="text" name="password" id="password" required style="margin-left:54px;px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
             <input type="submit" value="login" name="submit" i="i-submit">
             </form>
+          <a href="http://localhost/2170/a2/password_problems.php">Forgot your password?</a>
+          <a href="http://localhost/2170/a2/register.php">register?</a>
     </div>';
     }
   ?>
