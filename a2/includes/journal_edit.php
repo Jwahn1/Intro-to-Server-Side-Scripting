@@ -5,7 +5,8 @@ session_start();
     $output =  fopen ("../database/temp.csv","w");
 
 
-
+    //we copy to the second file every entry unless its the one we want to edit
+    //which we just change the journal entry row before writing into file
     while ($journalEntries= fgetcsv($database)) {
         if(($journalEntries[2] == $_SESSION["oldEntry"]) ) {
              $journalEntries[2] = $newEntry;

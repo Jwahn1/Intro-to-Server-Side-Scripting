@@ -4,7 +4,7 @@
     $output =  fopen ("../database/temp.csv","w");
 
 
-    //first we want to check if this used email is already in the database, then check the password
+    //we just rewrite every entry on the second file as long as its not the one we want to delete
     while ($journalEntries= fgetcsv($database)) {
         if(!($journalEntries[1] == $entry) ) {
         fputcsv($output,$journalEntries); 
