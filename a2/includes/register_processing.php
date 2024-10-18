@@ -1,6 +1,5 @@
 <?php
-     session_start();
-
+    session_start();
     $username = sanitize_input($_POST['username']);
     $password = sanitize_input($_POST['password']);
     $verifyPassword = sanitize_input($_POST['verify-password']);

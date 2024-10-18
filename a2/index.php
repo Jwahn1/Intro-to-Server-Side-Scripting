@@ -14,7 +14,7 @@ include "includes/header.php";
             <label for="i-keywords">Username</label>
             <input type="text" name="username" id="username" required style="margin-left:50px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
             <label for="i-keywords">Password</label>
-            <input type="text" name="password" id="password" required style="margin-left:54px;px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
+            <input type="text" name="password" id="password" required style="margin-left:54px;width:150px; borderstyle:solid; border-radius: 5px;"><br>
             <input type="submit" value="login" name="submit" i="i-submit">
             </form>
           <a href="http://localhost/2170/a2/password_problems.php">Forgot your password?</a>

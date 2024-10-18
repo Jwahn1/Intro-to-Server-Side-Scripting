@@ -21,12 +21,14 @@ session_start();
             <div class="col-1" style="font-size:20px; "></div>
             <div class="col-1" style="font-size:20px; "></div>
             <div class="col-1 "style="font-size:20px; text-align: center;"> <a href="http://localhost/2170/a2/index.php">Home</a> </div>
-            <div class="col-2 "style="font-size:20px;text-align: center;"> <a href="">Create Entry</a> </div>
-            <div class="col-1"style="font-size:20px;text-align: center;"><a href="http://localhost/2170/a2/account_settings.php">Preferences</a></div>
+
             <div class="col-1"style="font-size:20px;text-align: center;"><a href="">Login</a></div>
             <?php
             if(array_key_exists("loggedin",$_SESSION)){
-                $logout = '<div class="col-3"style="font-size:20px;text-align: center;"><a href="includes/logout.php">Logout (' . $_SESSION["username"] .')</a></div>';
+                $logout = ' <div class="col-2 "style="font-size:20px;text-align: center;"> <a href="http://localhost/2170/a2/add_entry.php">Create Entry</a> </div>
+                <div class="col-1"style="font-size:20px;text-align: center;"><a href="http://localhost/2170/a2/account_settings.php">Preferences</a></div>
+                <div class="col-1"style="font-size:20px;text-align: center;"><a href="http://localhost/2170/a2/entries.php">Entries</a></div>
+                <div class="col-2"style="font-size:20px;text-align: center;"><a href="includes/logout.php">Logout (' . $_SESSION["username"] .')</a></div>';
                 echo $logout;
             }
             ?>

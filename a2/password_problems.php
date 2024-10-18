@@ -38,6 +38,7 @@ include "includes/header.php";
     </div>';
     }
   ?>
+ <a href="includes/logout.php">restart process?</a>
 </div>
 
 <?php 
