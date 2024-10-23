@@ -1,3 +1,11 @@
+<script>
+    //as a reminder for myself later tomorrow, if you into the network tab in the localhost, youll see that theres a get request to swapi and essentially
+    //we can access the JSON file we just fetched through the $_GET[i have no idea what goes here] array.
+    fetch("https://swapi.dev/api/people/5")
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.error(err))
+</script>
 <?php
 include('../includes/header.php');
 
@@ -7,13 +15,12 @@ include('../includes/header.php');
     Lab 4 (index.php)
 */
 
-
 // Base URL for the SWAPI API
-$api_url = "ENTER YOUR API URL HERE";
+$api_url = "https://swapi.dev/api/";
 
 try {
-    // Fetch the data from the SWAPI API
-
+    
+    
 
 } catch (Exception $e) {
     echo "Error fetching data: " . $e->getMessage();

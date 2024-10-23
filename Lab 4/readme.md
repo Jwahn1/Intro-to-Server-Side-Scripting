@@ -2,9 +2,9 @@
 
 ## Student Information
 
-- **Name**: [Enter your name here]
-- **Student ID**: [Enter your student ID here]
-- **Date Created**: [Enter the date you created this assignment]
+- **Name**: [Javier Wahn]
+- **Student ID**: [B00935618]
+- **Date Created**: [11/22/2024]
 
 ## Overview
 
