@@ -1,11 +1,3 @@
-<script>
-    //as a reminder for myself later tomorrow, if you into the network tab in the localhost, youll see that theres a get request to swapi and essentially
-    //we can access the JSON file we just fetched through the $_GET[i have no idea what goes here] array.
-    fetch("https://swapi.dev/api/people/5")
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.error(err))
-</script>
 <?php
 include('../includes/header.php');
 
@@ -19,10 +11,13 @@ include('../includes/header.php');
 $api_url = "https://swapi.dev/api/";
 
 try {
-    
-    
+    // Fetch data from the SWAPI 
+    $response = file_get_contents($api_url . "people");
+
+    $characters = json_decode($response, true)['results'];
 
 } catch (Exception $e) {
+
     echo "Error fetching data: " . $e->getMessage();
     $characters = [];
 }
@@ -30,31 +25,31 @@ try {
 
 <h1>Star Wars Characters</h1>
 
+<!-- Display the data in a table -->
 <table class="table table-bordered table-hover">
-    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Height</th>
+        <th>Mass</th>
+        <th>Birth Year</th>
+    </tr>
+
+    <!--write the for loop displaying characters here -->
+    <?php if (!empty($characters)): ?>
+        <?php foreach ($characters as $character): ?>
+            <tr>
+                <td><?= $character['name'] ?></td>
+                <td><?= $character['height'] ?></td>
+                <td><?= $character['mass'] ?></td>
+                <td><?= $character['birth_year'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
         <tr>
-            <th>Name</th>
-            <th>Height</th>
-            <th>Mass</th>
-            <th>Birth Year</th>
+            <td colspan="4" class="text-center">No data available</td>
         </tr>
-    </thead>
-    <tbody>
-        <?php if (!empty($characters)): ?>
-            <?php
-            // Loop through the $characters array and display the character data in the table.
-            ?>
-            <tr>
-                <td><?= htmlspecialchars($character['name']) ?></td>
-                <!-- Other fields go here -->
-            </tr>
-            <?php ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="4" class="text-center">No data available</td>
-            </tr>
-        <?php endif; ?>
-    </tbody>
+    <?php endif; ?>
+
 </table>
 
 <a href="search.php" class="btn btn-primary">Search Characters</a>
