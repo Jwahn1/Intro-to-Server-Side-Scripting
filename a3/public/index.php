@@ -30,7 +30,26 @@
 
 <script>
     // Fetch JSON data and display in the table
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('../files/timetable.json')
+            .then(response => response.json())
+            .then(data => {
+                let tableBody = document.getElementById("course-table");
+                data.forEach(course => {
+                    let row = document.createElement("tr");
 
+                    row.innerHTML = `
+                        <td>${course.course_code}</td>
+                        <td>${course.course_name}</td>
+                        <td>${course.instructor}</td>
+                        <td>${course.schedule}</td>
+                        <td><button class="btn btn-primary">Add to Schedule</button></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error("Error loading data:", error));
+    });
 </script>
 
 

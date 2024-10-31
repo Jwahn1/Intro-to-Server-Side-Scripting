@@ -1,0 +1,21 @@
+[
+    {
+      "course_code": "MATH 1060",
+      "course_name": "Introductory Statistics",
+      "schedule": "Monday, Wednesday, Friday 10:00 - 11:00 AM",
+      "instructor": "Dr. Smith"
+    },
+    {
+      "course_code": "ENGG 2100",
+      "course_name": "Introduction to Thermodynamics",
+      "schedule": "Tuesday, Thursday 2:00 - 3:30 PM",
+      "instructor": "Dr. Johnson"
+    },
+    {
+      "course_code": "CSCI 1100",
+      "course_name": "Introduction to Computer Science",
+      "schedule": "Monday, Wednesday 1:00 - 2:30 PM",
+      "instructor": "Dr. Thompson"
+    }
+  ]
+  
