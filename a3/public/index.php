@@ -23,34 +23,34 @@
             </thead>
             <tbody id="course-table">
                 <!-- Data to be dynamically populated here using Fetch -->
+                <?php
+                    try {
+                    
+                        $response = file_get_contents("http://localhost/2170/a3/files/timetable.json");
+
+                        $timetable = json_decode($response, true);
+                        
+
+
+                    } catch (Exception $e) {
+
+                        echo "Error fetching data: " . $e->getMessage();
+                        $timetable = [];
+                    }
+                    ?>
+                <?php foreach ($timetable as $class): ?>
+                    <tr>
+                        <td><?= $class['course_code'] ?></td>
+                        <td><?= $class['course_name'] ?></td>
+                        <td><?= $class['schedule'] ?></td>
+                        <td><?= $class['instructor'] ?></td>
+                        <td><button>Add to Schedule</button></td>
+                    </tr><br>
+                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 </main>
-
-<script>
-    // Fetch JSON data and display in the table
-    document.addEventListener("DOMContentLoaded", function() {
-        fetch('../files/timetable.json')
-            .then(response => response.json())
-            .then(data => {
-                let tableBody = document.getElementById("course-table");
-                data.forEach(course => {
-                    let row = document.createElement("tr");
-
-                    row.innerHTML = `
-                        <td>${course.course_code}</td>
-                        <td>${course.course_name}</td>
-                        <td>${course.instructor}</td>
-                        <td>${course.schedule}</td>
-                        <td><button class="btn btn-primary">Add to Schedule</button></td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            })
-            .catch(error => console.error("Error loading data:", error));
-    });
-</script>
 
 
 <?php
