@@ -4,6 +4,8 @@
     (Fall Semester 2024)
     Assignment 3 (header.php)
 */
+
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,8 +35,11 @@
                 <ul class="navbar-nav ms-auto">
                     <?php
                     // Add user validation logic here
-                    if ():
+                    if (array_key_exists("loggedin",$_SESSION)):
                         ?>
+                        <li class="nav-item">
+                           <h3><?php echo $_SESSION["username"]?></h3>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="dashboard.php">Dashboard</a>
                         </li>

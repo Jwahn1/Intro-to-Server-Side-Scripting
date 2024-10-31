@@ -15,7 +15,7 @@
 <h2 class="text-center">Login</h2>
 <div class="row justify-content-center mt-4">
     <div class="col-md-4">
-        <form method="POST">
+        <form action="../includes/login.php"  method="POST" >
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" name="username" required>
