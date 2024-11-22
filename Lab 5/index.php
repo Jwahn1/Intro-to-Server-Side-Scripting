@@ -6,7 +6,7 @@
  */
 ?>
 <?php require_once "layout/header.php"; ?>
-
+<script src="js/script.js"></script>
 <aside class="featured-text">
     <h2>Register to use this site!</h2>
 </aside>
