@@ -4,9 +4,9 @@ __*Assignment 4 - Dalhousie University Forum*__
 
 ## Student Information
 
-- __Name__: [Enter your name here]
-- __Student ID__: [Enter your student ID here]
-- __Date Created__: [Enter the date you created this assignment]
+- __Name__: [Javier Wahn]
+- __Student ID__: [B00935618]
+- __Date Created__: [11/24/2024]
 
 ## Overview
 
