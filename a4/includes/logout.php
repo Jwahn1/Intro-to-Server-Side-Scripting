@@ -29,7 +29,7 @@
    
     // Finally, destroy the session.
     session_destroy();
-    header('location:http://localhost/2170/a2/index.php');
+    header('location:../index.php');
     exit();
 
 ?>
