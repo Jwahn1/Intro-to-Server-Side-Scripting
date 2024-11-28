@@ -42,7 +42,7 @@
 
 
     //return to previous webpage via header
-    header("Location: login.php"); // Redirect to the login page
+    header("Location: ../login_page.php"); // Redirect to the login page
     exit();
 
     //source: Lab 2 solution
