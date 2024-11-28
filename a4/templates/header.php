@@ -1,4 +1,6 @@
-
+<?php
+  session_start();
+?>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -12,12 +14,39 @@
     <title>Index</title>
   </head>
   <div class="row" style="height:50px; background-color:#78777b">
-    <div class="col-3" style="font-size:20px;">DALHOUSIE FORUM</div>
-    <div class="col-8" ></div>
+    
+    <div class="col-3" style="font-size:20px;">
+      <a href="index.php" ">DALHOUSIE FORUMS</a>
+    </div>
+    <div class="col-5" ></div>
     
     <?php
     //we should add an if statement that checks if the user is logged and in and then display the rest of the nav
     ?>
+    <?php if (isset($_SESSION['loggedin'])): ?>
+
+      <div class="col-1" style="font-size:20px;">
+        <a href="messages.php" ">Messages</a>
+      </div>
+      
+      <div class="col-1" style="font-size:20px;">
+        <a href="new_post.php" ">New Posts</a>
+      </div>
+
+      <div class="col-1" style="font-size:20px;">
+        <a href="includes/logout.php" ">Logoff</a>
+      </div>
+
+    <?php else: ?>
+      <div class="col-1" style="font-size:20px;">
+        <a href="login_page.php" ">Login</a>
+      </div>
+        
+      <div class="col-1" style="font-size:20px;">
+        <a href="register.php" ">Register</a>
+      </div>
+
+    <?php endif; ?>
     <!doctype html>
     
 
