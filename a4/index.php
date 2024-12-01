@@ -17,20 +17,18 @@
         </div>
     </div>
 
-<!-- we need to remove this script and rewrite it as our own, we need to understand how it works the way it works-->
+
     <script>
         async function fetchUserPosts(){
             try{
+
                 const asyncReponse = await fetch("includes/fetch_posts.php");
                 const data = await asyncReponse.json();
 
-                //now that we have the data we then append it to the the posts feed so the users can see it
                 const postFeed = document.getElementById("posts-feed");
                 for (let i = 0; i < data.length ; i++){
                     const post = data[i];
                     const postElement = document.createElement('div');
-                    postElement.style.borderBottom = '1px solid #ccc';
-                    postElement.style.padding = '10px';
                     postElement.innerHTML = `
                         <h3>${post.post_title}</h3>
                         <p>${post.post_content}</p>
@@ -41,10 +39,10 @@
                     postFeed.appendChild(postElement);
                 }
             }catch (error) {
-                console.error("Error:", error);
+                console.error("error", error);
             }
         }
-        // Call the function after page load
+       
         window.onload = fetchUserPosts;
    </script>
 </body>
