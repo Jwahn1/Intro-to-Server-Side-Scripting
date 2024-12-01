@@ -4,7 +4,7 @@ include "config.php";
 session_start();
 
 $user_target = $_POST["user_target"];
-$message_contents = $_POST["message"];
+$message_contents = sanitize_input($_POST["message"]);
 $user_sender = $_SESSION["username"];
 $timestamp = date("Y-m-d H:i:s");
 
@@ -58,4 +58,14 @@ $stmt->execute();
 header("Location: ../messages.php"); // Redirect to the login page
 exit();
 
+
+    //source: Lab 2 solution
+    // Function to sanitize input
+    function sanitize_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 ?>
