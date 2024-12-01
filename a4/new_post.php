@@ -5,7 +5,7 @@ include "templates/header.php";
 ?>
 <body>
     <div class="container mt-4 " style="background-color:#fff;height:100%; ">
-        <div class="row" style="height:80%; background-color:#bab8b9; border-style:solid;">
+        <div class="row" style=" background-color:#bab8b9; border-style:solid;">
             <div class="container" style="width:70%; background-color:#fff; border-style:solid;">
             <div class="col-3 mt-2" style="background-color:#bab8b9;  width:380px; text-align:left">
                 <h3>New Post</h3>
@@ -28,8 +28,18 @@ include "templates/header.php";
 </body>
 
 <script>
+
+    function DeleteUserPosts(){
+    fetch("includes/delete_post.php")
+    .then(response => response.json()) 
+    .catch(error => {
+        console.error("error",error);
+    });
+    }
+
+
     function fetchUserPosts() {
-    fetch('includes/fetch_user_posts.php')
+    fetch('includes/fetch_posts_by_user.php')
         .then(response => response.json()) 
         .then(posts => {
             if (Array.isArray(posts)) {
@@ -43,14 +53,15 @@ include "templates/header.php";
                     postElement.style.borderStyle = 'solid';
                     postElement.style.padding = '3px ';
                     postElement.innerHTML = `
-                        <p>${posts.post_id}</p>
-                        <p>${posts.post_title}</p>
-                        <p>Sent By: ${posts.post_content}</p>
-                        <p>Sent On: ${posts.post_created_at}</p>
-                       
+                        <p>Post id: ${post.post_selfID}</p>
+                        <p>Post Title: ${post.post_title}</p>
+                        <p>Post Content : ${post.post_content}</p>
+                        <p>Posted On: ${post.post_created_at}</p>
+                        <button class="edit-btn" data-id="${post.post_selfID}">Edit</button>
+                        <button class="delete-btn" data-id="${post.post_selfID}">Delete</button>
                     `;
                    
-                    messageContainer.appendChild(messageElement);
+                    postContainer.appendChild(postElement);
                 });
             } 
             
@@ -91,6 +102,6 @@ include "templates/header.php";
         // Call the function to send data
         sendDataToPHP(postContent,postTitle);
     });
-    
+
     fetchUserPosts();
 </script>
