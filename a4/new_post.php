@@ -40,8 +40,8 @@ function DeleteUserPosts(postId) {
     .then(response => response.text())
     .then(function (data) {
         console.log(data);
-        // Refresh the posts after deletion
-        fetchUserPosts();
+        
+        
     })
     .catch(error => {
         console.error("Error:", error);
@@ -63,7 +63,7 @@ function DeleteUserPosts(postId) {
             if (Array.isArray(posts)) {
               
                 const postContainer = document.getElementById('userPosts');
-            
+                postContainer.innerHTML = '';
                 
                
                 posts.forEach(post => {
@@ -71,7 +71,6 @@ function DeleteUserPosts(postId) {
                     postElement.style.borderStyle = 'solid';
                     postElement.style.padding = '3px ';
                     postElement.innerHTML = `
-                        <p>Post id: ${post.post_selfID}</p>
                         <p>Post Title: ${post.post_title}</p>
                         <p>Post Content : ${post.post_content}</p>
                         <p>Posted On: ${post.post_created_at}</p>
@@ -121,5 +120,6 @@ function DeleteUserPosts(postId) {
         sendDataToPHP(postContent,postTitle);
     });
 
-    fetchUserPosts();
+   
+    setInterval(fetchUserPosts, 1000);
 </script>
