@@ -20,7 +20,7 @@ $sender_id = $sender_info["id"];
 //then just insert into database
 $query = "INSERT INTO posts (user_id,title,content,created_at) VALUES (?,?,?,?)";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("ssss",$sender_id,$post_title,$post_title,$timestamp);
+$stmt->bind_param("ssss",$sender_id,$post_title,$post_content,$timestamp);
 $stmt->execute();
 
 
