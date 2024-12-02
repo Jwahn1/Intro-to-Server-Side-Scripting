@@ -29,6 +29,7 @@ include "templates/header.php";
 
 <script>
 
+//function calls "delete_post.php" and sends the id of the post it needs to delete
 function DeleteUserPosts(postId) {
     fetch("includes/delete_post.php", {
         method: 'POST',
@@ -49,49 +50,51 @@ function DeleteUserPosts(postId) {
 }
 
     //event listener to check when a post needs to be deleted
-        document.getElementById("userPosts").addEventListener("click", function (event) {
-            if (event.target.classList.contains("delete-btn")) {
-                const postId = event.target.getAttribute("data-id");
-                DeleteUserPosts(postId);
-            }
-        });
+    document.getElementById("userPosts").addEventListener("click", function (event) {
+        if (event.target.classList.contains("delete-btn")) {
+            const postId = event.target.getAttribute("data-id");
+            DeleteUserPosts(postId);
+        }
+    });
 
-        function fetchUserPosts() {
-        fetch('includes/fetch_posts_by_user.php')
-        .then(response => response.json()) 
-        .then(posts => {
-            if (Array.isArray(posts)) {
-              
-                const postContainer = document.getElementById('userPosts');
-                postContainer.innerHTML = '';
-                
-               
-                posts.forEach(post => {
-                    const postElement = document.createElement('div');
-                    postElement.style.borderStyle = 'solid';
-                    postElement.style.padding = '3px ';
-                    postElement.innerHTML = `
-                        <p>Post Title: ${post.post_title}</p>
-                        <p>Post Content : ${post.post_content}</p>
-                        <p>Posted On: ${post.post_created_at}</p>
-                        <button class="edit-btn" data-id="${post.post_selfID}">Edit</button>
-                        <button class="delete-btn" data-id="${post.post_selfID}">Delete</button>
-                    `;
-                   
-                    postContainer.appendChild(postElement);
-                });
-            } 
+
+    //function sends a request to "fetch_posts_by_user.php" for an array containing all posts made by the user and then appends
+    //the posts to the "userPosts" div 
+    function fetchUserPosts() {
+    fetch('includes/fetch_posts_by_user.php')
+    .then(response => response.json()) 
+    .then(posts => {
+        if (Array.isArray(posts)) {
             
-        })
-        .catch(error => {
-            console.error("error",error);
-        });
+            const postContainer = document.getElementById('userPosts');
+            postContainer.innerHTML = '';
+            
+            
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.style.borderStyle = 'solid';
+                postElement.style.padding = '3px ';
+                postElement.innerHTML = `
+                    <p>Post Title: ${post.post_title}</p>
+                    <p>Post Content : ${post.post_content}</p>
+                    <p>Posted On: ${post.post_created_at}</p>
+                    <button class="delete-btn" data-id="${post.post_selfID}">Delete</button>
+                `;
+                
+                postContainer.appendChild(postElement);
+            });
+        } 
+        
+    })
+    .catch(error => {
+        console.error("error",error);
+    });
 }
 
 
 
-
-    async function sendDataToPHP(postContent,postTitle) {
+    //function sends to "new_post_processing.php" the contents of the post it needs to insert into the database
+    async function submitPost(postContent,postTitle) {
         try {
             let response = await fetch("includes/new_post_processing.php", {
             method: "POST",
@@ -117,7 +120,7 @@ function DeleteUserPosts(postId) {
         const postContent = document.getElementById("post").value;
         const postTitle = document.getElementById("title").value;
         // Call the function to send data
-        sendDataToPHP(postContent,postTitle);
+        submitPost(postContent,postTitle);
     });
 
    
