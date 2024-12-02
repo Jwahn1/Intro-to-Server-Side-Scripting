@@ -101,3 +101,8 @@ function fetchSentMessages() {
 setInterval(fetchRecievedMessages, 1000);
 setInterval(fetchSentMessages, 1000);
 </script>
+
+
+<?php
+    include "templates/footer.php";
+?>

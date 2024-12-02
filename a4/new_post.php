@@ -126,3 +126,8 @@ function DeleteUserPosts(postId) {
    
     setInterval(fetchUserPosts, 1000);
 </script>
+
+
+<?php
+    include "templates/footer.php";
+?>

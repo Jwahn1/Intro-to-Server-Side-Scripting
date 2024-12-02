@@ -47,3 +47,6 @@
    </script>
 </body>
 
+<?php
+include "templates/footer.php";
+?>
