@@ -29,17 +29,35 @@ include "templates/header.php";
 
 <script>
 
-    function DeleteUserPosts(){
-    fetch("includes/delete_post.php")
-    .then(response => response.json()) 
+function DeleteUserPosts(postId) {
+    fetch("includes/delete_post.php", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id: postId })
+    })
+    .then(response => response.text())
+    .then(function (data) {
+        console.log(data);
+        // Refresh the posts after deletion
+        fetchUserPosts();
+    })
     .catch(error => {
-        console.error("error",error);
+        console.error("Error:", error);
     });
-    }
+}
 
+    //event listener to check when a post needs to be deleted
+        document.getElementById("userPosts").addEventListener("click", function (event) {
+            if (event.target.classList.contains("delete-btn")) {
+                const postId = event.target.getAttribute("data-id");
+                DeleteUserPosts(postId);
+            }
+        });
 
-    function fetchUserPosts() {
-    fetch('includes/fetch_posts_by_user.php')
+        function fetchUserPosts() {
+        fetch('includes/fetch_posts_by_user.php')
         .then(response => response.json()) 
         .then(posts => {
             if (Array.isArray(posts)) {
