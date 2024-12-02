@@ -3,7 +3,7 @@
     // Database configuration
     $servername = "localhost";
     $username = "root"; // Replace with your database username
-    $password = "Taquitotaquito1";     // Replace with your database password
+    $password = "";     // Replace with your database password
     $dbname = "dalhousie_forum"; // Replace with your database name
 
     // Create connection
